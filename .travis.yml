@@ -29,9 +29,9 @@ script:
 after_success:
   # the following commands build the UpdateSheet.java file and report a successful test.
   - mvn compile
-  - mvn exec:java -Dexec.mainClass="api.UpdateSheet" -Dexec.args="$AUTHOR_NAME SUCCESSFUL"
+  - mvn exec:java -Dexec.mainClass="api.UpdateSheet" -Dexec.args="$AUTHOR_NAME SUCCESS"
 
 after_failure:
   # the following commands build the UpdateSheet.java file and report a failed test.
   - mvn compile
-  - mvn exec:java -Dexec.mainClass="api.UpdateSheet" -Dexec.args="$AUTHOR_NAME FAILED"
+  - mvn exec:java -Dexec.mainClass="api.UpdateSheet" -Dexec.args="$AUTHOR_NAME FAIL"
