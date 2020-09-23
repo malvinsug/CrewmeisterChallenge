@@ -1,7 +1,9 @@
 import static org.junit.Assert.assertEquals;
 
 import crewmeister.*;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 public class CrewmeisterChallengeTest {
   private String word;
@@ -9,9 +11,11 @@ public class CrewmeisterChallengeTest {
   private String actual;
   private String expected;
 
+  @Rule
+  public Timeout globalTimeout= new Timeout(120000); // Timeout = 2 minutes
+
   @Test
   public void palindromTest() {
-    // Palindrom string
     word = "abcba";
     wordBuilder = new StringBuilder(word);
 
@@ -29,7 +33,6 @@ public class CrewmeisterChallengeTest {
 
   @Test
   public void stringWithSameCharacterTest() {
-    // string with same characters
     word = "AAAAA";
     wordBuilder = new StringBuilder(word);
 
@@ -40,7 +43,6 @@ public class CrewmeisterChallengeTest {
 
   @Test
   public void randomCharactersTest() {
-    // random characters
     word = "zS6eC2sJ6k";
     wordBuilder = new StringBuilder(word);
 
@@ -51,7 +53,6 @@ public class CrewmeisterChallengeTest {
 
   @Test
   public void stringWithSpaceTest() {
-    // string with space
     word = "zS 6e C2  sJ6   k";
     wordBuilder = new StringBuilder(word);
 
@@ -62,7 +63,6 @@ public class CrewmeisterChallengeTest {
 
   @Test
   public void stringWithEnterSymbolTest() {
-    // string with \n
     word = "zs6e\nC2sJ6k";
     wordBuilder = new StringBuilder(word);
 
@@ -73,7 +73,6 @@ public class CrewmeisterChallengeTest {
 
   @Test
   public void emptyStringTest() {
-    // empty string
     word = "";
     wordBuilder = new StringBuilder(word);
 
@@ -86,17 +85,16 @@ public class CrewmeisterChallengeTest {
   public void longestStringTest() {
     // only use this, when it's necessary.
     // longest string
-    //word = generateLongestString();
-    //wordBuilder = new StringBuilder(word);
+    word = generateLongestString();
+    wordBuilder = new StringBuilder(word);
 
-    //actual = CrewmeisterChallenge.crewmeisterRevert(word);
-    //expected = wordBuilder.reverse().toString();
-    //assertEquals(expected,actual);
+    actual = CrewmeisterChallenge.crewmeisterRevert(word);
+    expected = wordBuilder.reverse().toString();
+    assertEquals(expected,actual);
   }
 
   @Test(expected = NullPointerException.class)
   public void nullInputTest() {
-    // null input
     CrewmeisterChallenge.crewmeisterRevert(null);
   }
 

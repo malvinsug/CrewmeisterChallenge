@@ -7,12 +7,18 @@ public class CrewmeisterChallenge {
    * @return a reversed string.
    */
   public static String crewmeisterRevert(String word) {
-    char[] wordElements = word.toCharArray();
-    StringBuilder reversedWord = new StringBuilder();
-    for (int index = wordElements.length - 1;index >= 0;index--) {
-      reversedWord.append(wordElements[index]);
-    }
-    return reversedWord.toString();
+    String reversedWordString = "";
+    // If you leave it like this, the test will fail.
+    // If you uncomment the comment block bellow, the test will be successful.
+    /* char[] wordElements = word.toCharArray();
+     * StringBuilder reversedWord = new StringBuilder();
+     * for (int index = wordElements.length - 1;index >= 0;index--) {
+     *  reversedWord.append(wordElements[index]);
+     * }
+     * reversedWordString = reversedWord.toString();
+     */
+
+    return reversedWordString;
   }
 
 }
