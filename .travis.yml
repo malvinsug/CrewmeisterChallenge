@@ -22,6 +22,8 @@ before_install:
   - export AUTHOR_NAME="$(git log -1 $TRAVIS_COMMIT --pretty="%aN")"
 
 script:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test -B
   - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=crewmeister
 
 after_success:
