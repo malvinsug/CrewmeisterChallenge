@@ -85,12 +85,12 @@ public class CrewmeisterChallengeTest {
   public void longestStringTest() {
     // only use this, when it's necessary.
     // longest string
-    word = generateLongestString();
-    wordBuilder = new StringBuilder(word);
-
-    actual = CrewmeisterChallenge.crewmeisterRevert(word);
-    expected = wordBuilder.reverse().toString();
-    assertEquals(expected,actual);
+    /* word = generateLongestString();
+     * wordBuilder = new StringBuilder(word);
+     * actual = CrewmeisterChallenge.crewmeisterRevert(word);
+     * expected = wordBuilder.reverse().toString();
+     * assertEquals(expected,actual);
+     */
   }
 
   @Test(expected = NullPointerException.class)
