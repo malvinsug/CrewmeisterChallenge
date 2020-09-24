@@ -11,13 +11,12 @@ public class CrewmeisterChallenge {
     // If you leave it like this, the test will fail.
     // If you uncomment the comment block bellow, the test will be successful.
     // TODO: Delete this code once it's published to the candidates.
-    /* char[] wordElements = word.toCharArray();
-     * StringBuilder reversedWord = new StringBuilder();
-     * for (int index = wordElements.length - 1;index >= 0;index--) {
-     *   reversedWord.append(wordElements[index]);
-     * }
-     * reversedWordString = reversedWord.toString();
-     */
+    char[] wordElements = word.toCharArray();
+    StringBuilder reversedWord = new StringBuilder();
+    for (int index = wordElements.length - 1;index >= 0;index--) {
+      reversedWord.append(wordElements[index]);
+    }
+    reversedWordString = reversedWord.toString();
 
     return reversedWordString;
   }
