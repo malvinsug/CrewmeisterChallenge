@@ -29,10 +29,14 @@ import com.google.api.services.sheets.v4.model.ValueRange;
  * author and also the test result (either successful or fail).
  */
 public class UpdateSheet {
-  private static Sheets sheetsService;
-  private static String APPLICATION_NAME = "CrewmeisterTravis";
-  private static String SPREADSHEET_ID = "1xlMOPSEJ4xcwCZuA2iFfN1bNar_MG-9yYZm2f_a0cvE";
+  private UpdateSheet() {
+    /*Private Constructor will prevent
+     * the instantiation of this class directly*/
+  }
 
+  private static Sheets sheetsService;
+
+  private static final String SPREADSHEET_ID = "1xlMOPSEJ4xcwCZuA2iFfN1bNar_MG-9yYZm2f_a0cvE";
   private static final int RELEVANT_ARGUMENT_LENGTH = 3;
   private static final int FIRST_NAME_INDEX = 0;
   private static final int LAST_NAME_INDEX = 1;
@@ -84,9 +88,10 @@ public class UpdateSheet {
    */
   private static Sheets getSheetsService() throws IOException, GeneralSecurityException {
     Credential credential = authorize();
+    String applicationName = "CrewmeisterTravis";
     return new Sheets.Builder(GoogleNetHttpTransport.newTrustedTransport(),
             JacksonFactory.getDefaultInstance(), credential)
-            .setApplicationName(APPLICATION_NAME)
+            .setApplicationName(applicationName)
             .build();
   }
 

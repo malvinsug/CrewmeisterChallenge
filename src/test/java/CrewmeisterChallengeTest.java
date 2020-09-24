@@ -5,6 +5,10 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
+/**
+ * This class is written for running some unit tests once the candidates
+ * push their code into the repository. Each test has a 2 minutes timeout.
+ */
 public class CrewmeisterChallengeTest {
   private String word;
   private StringBuilder wordBuilder;
@@ -83,14 +87,13 @@ public class CrewmeisterChallengeTest {
 
   @Test
   public void longestStringTest() {
-    // only use this, when it's necessary.
-    // longest string
-    /* word = generateLongestString();
-     * wordBuilder = new StringBuilder(word);
-     * actual = CrewmeisterChallenge.crewmeisterRevert(word);
-     * expected = wordBuilder.reverse().toString();
-     * assertEquals(expected,actual);
-     */
+    // The test will fail if it exceeds the timeout.
+    word = generateLongestString();
+    wordBuilder = new StringBuilder(word);
+    actual = CrewmeisterChallenge.crewmeisterRevert(word);
+    expected = wordBuilder.reverse().toString();
+    assertEquals(expected,actual);
+
   }
 
   @Test(expected = NullPointerException.class)
