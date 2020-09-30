@@ -103,7 +103,7 @@ public class CrewmeisterChallengeTest {
 
   private String generateLongestString() {
     String longestString = "";
-    int maxValue = Integer.MAX_VALUE-1;
+    int maxValue = 1000;
     for (int i=0;i<=maxValue;i++) {
       longestString += "a";
     }
